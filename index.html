@@ -1,76 +1,51 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Dimensional Glitch</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta https-equiv="X-UA-Compatible" content="ie=edge" />    
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/183516/gilroy-webfont.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Three JS - Scroll projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
 
-  </head>
-  <body>
-<!-- @NOTE: the onclicks are used for touch devices since I'm lazy and didnt use <a> tags -->
-    <div class="Menu">
-        <ul class="Menu-list" data-offset="10">
-          <li class="Menu-list-item" data-offset="20" onclick>
-            Home
-            <span class="Mask"><span>Home</span></span>
-            <span class="Mask"><span>Home</span></span>
-          </li>
-          <li class="Menu-list-item" data-offset="16" onclick>
-            About
-            <span class="Mask"><span>About</span></span>
-            <span class="Mask"><span>About</span></span>
-          </li>
-          <li class="Menu-list-item" data-offset="12" onclick>
-            Work
-            <span class="Mask"><span>Work</span></span>
-            <span class="Mask"><span>Work</span></span>
-          </li>
-          <li class="Menu-list-item" data-offset="8" onclick>
-            Contact
-            <span class="Mask"><span>Contact</span></span>
-            <span class="Mask"><span>Contact</span></span>
-          </li>
-        </ul>
-      </div>
- 
-  </body>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script id="vertexShader" type="x-shader/x-vertex">
+    varying vec2 vUv;
 
-  <script>
-  var $menu = $('.Menu-list'),
-    $item = $('.Menu-list-item'),
-    w = $(window).width(), //window width
-    h = $(window).height(); //window height
+    void main() {
+        vUv = uv;
 
-$(window).on('mousemove', function(e) {
-  var offsetX = 0.5 - e.pageX / w, //cursor position X
-      offsetY = 0.5 - e.pageY / h, //cursor position Y
-      dy = e.pageY - h / 2, //@h/2 = center of poster
-      dx = e.pageX - w / 2, //@w/2 = center of poster
-      theta = Math.atan2(dy, dx), //angle between cursor and center of poster in RAD
-      angle = theta * 180 / Math.PI - 90, //convert rad in degrees
-      offsetPoster = $menu.data('offset'),
-      transformPoster = 'translate3d(0, ' + -offsetX * offsetPoster + 'px, 0) rotateX(' + (-offsetY * offsetPoster) + 'deg) rotateY(' + (offsetX * (offsetPoster * 8)) + 'deg)'; //poster transform
-
-  //get angle between 0-360
-  if (angle < 0) {
-    angle = angle + 360;
-  }
-
-  //poster transform
-  $menu.css('transform', transformPoster);
-
-  //parallax for each layer
-  $item.each(function() {
-    var $this = $(this),
-        offsetLayer = $this.data('offset') || 0,
-        transformLayer = 'translate3d(' + offsetX * offsetLayer + 'px, ' + offsetY * offsetLayer + 'px, 20px)';
-
-    $this.css('transform', transformLayer);
-  });
-});
+        gl_Position =   projectionMatrix * 
+                        modelViewMatrix * 
+                        vec4(position,1.0);
+    }
 </script>
-  </html>
+
+<script id="fragmentShader" type="x-shader/x-fragment">
+    uniform sampler2D image;
+    uniform sampler2D displacement;
+    uniform float u_time;
+    uniform float u_progress;
+    uniform float u_mouse;
+
+    varying vec2 vUv;
+
+    void main() {
+        vec4 displace = texture2D(displacement, vUv);
+        vec2 displacedUV = vec2(vUv.x + u_progress * 0.1 * sin(vUv.y * 4.0 + u_time), vUv.y);
+        
+        vec4 color = texture2D(image, displacedUV);
+        
+        color.r = texture2D(image, displacedUV + vec2(0., 10.0 * 0.005) * (u_progress * 5.)).r;
+        color.g = texture2D(image, displacedUV + vec2(0., 10.0 * 0.007) * (u_progress * 2.)).g;
+        color.b = texture2D(image, displacedUV + vec2(0., 10.0 * 0.008) * (u_progress * 3.0)).b;
+        
+        gl_FragColor = color;
+    }
+</script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
