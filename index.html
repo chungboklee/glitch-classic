@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dimensional Glitch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta https-equiv="X-UA-Compatible" content="ie=edge" />    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/183516/gilroy-webfont.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+<!-- @NOTE: the onclicks are used for touch devices since I'm lazy and didnt use <a> tags -->
+    <div class="Menu">
+        <ul class="Menu-list" data-offset="10">
+          <li class="Menu-list-item" data-offset="20" onclick>
+            Home
+            <span class="Mask"><span>Home</span></span>
+            <span class="Mask"><span>Home</span></span>
+          </li>
+          <li class="Menu-list-item" data-offset="16" onclick>
+            About
+            <span class="Mask"><span>About</span></span>
+            <span class="Mask"><span>About</span></span>
+          </li>
+          <li class="Menu-list-item" data-offset="12" onclick>
+            Work
+            <span class="Mask"><span>Work</span></span>
+            <span class="Mask"><span>Work</span></span>
+          </li>
+          <li class="Menu-list-item" data-offset="8" onclick>
+            Contact
+            <span class="Mask"><span>Contact</span></span>
+            <span class="Mask"><span>Contact</span></span>
+          </li>
+        </ul>
+      </div>
+ 
+  </body>
+
+  <script>
+  var $menu = $('.Menu-list'),
+    $item = $('.Menu-list-item'),
+    w = $(window).width(), //window width
+    h = $(window).height(); //window height
+
+$(window).on('mousemove', function(e) {
+  var offsetX = 0.5 - e.pageX / w, //cursor position X
+      offsetY = 0.5 - e.pageY / h, //cursor position Y
+      dy = e.pageY - h / 2, //@h/2 = center of poster
+      dx = e.pageX - w / 2, //@w/2 = center of poster
+      theta = Math.atan2(dy, dx), //angle between cursor and center of poster in RAD
+      angle = theta * 180 / Math.PI - 90, //convert rad in degrees
+      offsetPoster = $menu.data('offset'),
+      transformPoster = 'translate3d(0, ' + -offsetX * offsetPoster + 'px, 0) rotateX(' + (-offsetY * offsetPoster) + 'deg) rotateY(' + (offsetX * (offsetPoster * 8)) + 'deg)'; //poster transform
+
+  //get angle between 0-360
+  if (angle < 0) {
+    angle = angle + 360;
+  }
+
+  //poster transform
+  $menu.css('transform', transformPoster);
+
+  //parallax for each layer
+  $item.each(function() {
+    var $this = $(this),
+        offsetLayer = $this.data('offset') || 0,
+        transformLayer = 'translate3d(' + offsetX * offsetLayer + 'px, ' + offsetY * offsetLayer + 'px, 20px)';
+
+    $this.css('transform', transformLayer);
+  });
+});
+</script>
+  </html>

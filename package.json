@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "glitched-writer": "^2.0.29",
+    "jquery": "^3.6.1"
+  }
+}
