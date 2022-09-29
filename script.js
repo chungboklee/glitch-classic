@@ -7,7 +7,7 @@ let viewport = {
 
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xb0cec8);
+scene.background = new THREE.Color(000000);
 
 const renderer = new THREE.WebGLRenderer({
   antialias: true,
@@ -18,7 +18,7 @@ renderer.setSize(viewport.width, viewport.height);
 renderer.setPixelRatio = window.devicePixelRatio;
 container.appendChild(renderer.domElement);
 
-const FOV = 50;
+const FOV = 80;
 const CAMERA_NEAR = 0.1;
 const CAMERA_FAR = 160;
 const ASPECT_RATIO = viewport.aspectRatio;
@@ -35,7 +35,7 @@ camera.position.set(0, 0, 50);
 {
   const near = 1;
   const far = 150;
-  const color = 0xb0cec8;
+  const color = 0x000000;
   scene.fog = new THREE.Fog(color, near, far);
 }
 
@@ -47,7 +47,7 @@ const sectionsInfo = [
   "https://assets.codepen.io/2479807/grid-photo-2.jpg",
   "https://assets.codepen.io/2479807/grid-photo-1.jpg"],
 
-  title: "Januar" },
+  title: "Dimensional Glitch\nNews Website Concept" },
 
 {
   images: [
@@ -81,7 +81,7 @@ const raycaster = new THREE.Raycaster();
 let intersections = [];
 const textureLoader = new THREE.TextureLoader();
 const fontLoader = new THREE.FontLoader();
-const font = "https://assets.codepen.io/2479807/silk-json.json";
+const font = "font.json";
 
 const makePlane = (width, height, image) => {
   const geometry = new THREE.PlaneBufferGeometry(width, height, 1);
@@ -105,7 +105,7 @@ const setImagesPositions = (image, index) => {
     // Top right
     gsap.set(image, { x: 20, y: 20, z: "-=40" });
   } else if (index === 3) {
-    // Bottom right
+    // Bottom rightv
     gsap.set(image, { x: 20, y: -20, z: "-=120" });
   }
 
@@ -120,14 +120,14 @@ sectionsInfo.forEach((section, index) => {
   fontLoader.load(font, font => {
     const geometry = new THREE.TextBufferGeometry(section.title, {
       font: font,
-      size: 6,
+      size: 4,
       height: 0,
       curveSegments: 4 }).
     center();
 
     const material = new THREE.MeshBasicMaterial({
       //color: 0x404e7c
-      color: 0x00a1d7 });
+      color: 0xffffff });
 
 
     const mesh = new THREE.Mesh(geometry, material);
