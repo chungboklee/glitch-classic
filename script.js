@@ -18,7 +18,7 @@ renderer.setSize(viewport.width, viewport.height);
 renderer.setPixelRatio = window.devicePixelRatio;
 container.appendChild(renderer.domElement);
 
-const FOV = 80;
+const FOV = 88;
 const CAMERA_NEAR = 0.1;
 const CAMERA_FAR = 160;
 const ASPECT_RATIO = viewport.aspectRatio;
@@ -42,21 +42,20 @@ camera.position.set(0, 0, 50);
 const sectionsInfo = [
 {
   images: [
-  "https://assets.codepen.io/2479807/grid-photo-4.jpg",
-  "https://assets.codepen.io/2479807/grid-photo-3.jpg",
-  "https://assets.codepen.io/2479807/grid-photo-2.jpg",
-  "https://assets.codepen.io/2479807/grid-photo-1.jpg"],
+  "/asset/1.jpeg",
+  "https://images.wsj.net/im-633165?width=1260&height=840&pixel_ratio=2",
+  "https://images.wsj.net/im-632559?width=1260&height=840&pixel_ratio=2",
+  "https://images.wsj.net/im-633144?width=1260&height=840&pixel_ratio=2"],
 
-  title: "Dimensional Glitch\nNews Website Concept" },
+  title: "THE DIMENSION\nnews website"},
 
 {
   images: [
-  "https://assets.codepen.io/2479807/scroll-1.jpg",
+  "https://images.wsj.net/im-609750/?width=2000&size=1.5",
   "https://assets.codepen.io/2479807/scroll-2.jpg",
   "https://assets.codepen.io/2479807/scroll-3.jpg"],
 
-  title: "Februar" },
-
+  title: "29\nSEP"},
 {
   images: [
   "https://assets.codepen.io/2479807/img-5.jpg",
@@ -64,7 +63,7 @@ const sectionsInfo = [
   "https://assets.codepen.io/2479807/img-7.jpg",
   "https://assets.codepen.io/2479807/img-8.jpg"],
 
-  title: "Mars" },
+  title: "28\nSEP"},
 
 {
   images: [
@@ -73,7 +72,7 @@ const sectionsInfo = [
   "https://assets.codepen.io/2479807/bike-3.jpg",
   "https://assets.codepen.io/2479807/grid-photo-1.jpg"],
 
-  title: "April" }];
+  title: "27\nSEP"}];
 
 
 
@@ -81,7 +80,7 @@ const raycaster = new THREE.Raycaster();
 let intersections = [];
 const textureLoader = new THREE.TextureLoader();
 const fontLoader = new THREE.FontLoader();
-const font = "font.json";
+const font = "https://chungboklee.github.io/glitch-classic/font.json";
 
 const makePlane = (width, height, image) => {
   const geometry = new THREE.PlaneBufferGeometry(width, height, 1);
@@ -97,16 +96,16 @@ const makePlane = (width, height, image) => {
 const setImagesPositions = (image, index) => {
   if (index === 0) {
     // Top left
-    gsap.set(image, { x: -20, y: 20, z: "-=20" });
+    gsap.set(image, { x: -10, y: 10, z: "-=20" });
   } else if (index === 1) {
     // Bottom left
-    gsap.set(image, { x: -20, y: -20, z: "-=80" });
+    gsap.set(image, { x: -10, y: -10, z: "-=80" });
   } else if (index === 2) {
     // Top right
-    gsap.set(image, { x: 20, y: 20, z: "-=40" });
+    gsap.set(image, { x: 10, y: 10, z: "-=40" });
   } else if (index === 3) {
     // Bottom rightv
-    gsap.set(image, { x: 20, y: -20, z: "-=120" });
+    gsap.set(image, { x: 10, y: -10, z: "-=120" });
   }
 
   return;
@@ -121,12 +120,11 @@ sectionsInfo.forEach((section, index) => {
     const geometry = new THREE.TextBufferGeometry(section.title, {
       font: font,
       size: 4,
-      height: 0,
+      height: 0.2,
       curveSegments: 4 }).
     center();
 
     const material = new THREE.MeshBasicMaterial({
-      //color: 0x404e7c
       color: 0xffffff });
 
 
@@ -134,6 +132,7 @@ sectionsInfo.forEach((section, index) => {
 
     sectionGroup.add(mesh);
   });
+  
 
   section.images.forEach((image, index) => {
     const plane = makePlane(
