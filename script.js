@@ -34,7 +34,7 @@ camera.position.set(0, 0, 50);
 
 {
   const near = 1;
-  const far = 150;
+  const far = 300;
   const color = 0x000000;
   scene.fog = new THREE.Fog(color, near, far);
 }
@@ -45,7 +45,10 @@ const sectionsInfo = [
   "https://chungboklee.github.io/glitch-classic/asset/1.png",
   "https://chungboklee.github.io/glitch-classic/asset/2.png",
   "https://chungboklee.github.io/glitch-classic/asset/3.png",
-  "https://chungboklee.github.io/glitch-classic/asset/4.png"],
+  "https://chungboklee.github.io/glitch-classic/asset/4.png",
+  "https://chungboklee.github.io/glitch-classic/asset/5.png",
+  "https://chungboklee.github.io/glitch-classic/asset/6.png",
+  "https://chungboklee.github.io/glitch-classic/asset/7.png"],
 
   title: "THE DIMENSION\nTODAY"},
 
@@ -53,7 +56,11 @@ const sectionsInfo = [
   images: [
   "https://chungboklee.github.io/glitch-classic/asset/5.png",
   "https://chungboklee.github.io/glitch-classic/asset/6.png",
-  "https://chungboklee.github.io/glitch-classic/asset/7.png"],
+  "https://chungboklee.github.io/glitch-classic/asset/7.png",
+  "https://chungboklee.github.io/glitch-classic/asset/8.png",
+  "https://chungboklee.github.io/glitch-classic/asset/9.png",
+  "https://chungboklee.github.io/glitch-classic/asset/10.png",
+  "https://chungboklee.github.io/glitch-classic/asset/11.png"],
 
   title: "29\nSEP"},
 {
@@ -61,7 +68,10 @@ const sectionsInfo = [
   "https://chungboklee.github.io/glitch-classic/asset/8.png",
   "https://chungboklee.github.io/glitch-classic/asset/9.png",
   "https://chungboklee.github.io/glitch-classic/asset/10.png",
-  "https://chungboklee.github.io/glitch-classic/asset/11.png"],
+  "https://chungboklee.github.io/glitch-classic/asset/11.png",
+  "https://chungboklee.github.io/glitch-classic/asset/12.png",
+  "https://chungboklee.github.io/glitch-classic/asset/13.png",
+  "https://chungboklee.github.io/glitch-classic/asset/14.png"],
 
   title: "28\nSEP"},
 
@@ -70,7 +80,10 @@ const sectionsInfo = [
   "https://chungboklee.github.io/glitch-classic/asset/12.png",
   "https://chungboklee.github.io/glitch-classic/asset/13.png",
   "https://chungboklee.github.io/glitch-classic/asset/14.png",
-  "https://chungboklee.github.io/glitch-classic/asset/15.png"],
+  "https://chungboklee.github.io/glitch-classic/asset/15.png",
+  "https://chungboklee.github.io/glitch-classic/asset/5.png",
+  "https://chungboklee.github.io/glitch-classic/asset/6.png",
+  "https://chungboklee.github.io/glitch-classic/asset/7.png"],
 
   title: "27\nSEP"}];
 
@@ -105,9 +118,20 @@ const setImagesPositions = (image, index) => {
     gsap.set(image, { x: 8, y: 8, z: "-=40" });
   } else if (index === 3) {
     // Bottom rightv
-    gsap.set(image, { x: 8, y: -8, z: "-=120" });
+    gsap.set(image, { x: 8, y: -8, z: "-=20" });
+  } else if (index === 4) {
+    // Bottom rightv
+    gsap.set(image, { x: -16, y: 16, z: "-=80" });
+  } else if (index === 5) {
+    // Bottom rightv
+    gsap.set(image, { x: -16, y: -16, z: "-=40" });
+  } else if (index === 6) {
+    // Bottom rightv
+    gsap.set(image, { x: 16, y: 16, z: "-=20" });
+  } else if (index === 7) {
+    // Bottom rightv
+    gsap.set(image, { x: 16, y: -16, z: "-=80" });
   }
-
   return;
 };
 
