@@ -42,35 +42,35 @@ camera.position.set(0, 0, 50);
 const sectionsInfo = [
 {
   images: [
-  "https://chungboklee.github.io/glitch-classic/asset/1.jpeg",
-  "https://images.wsj.net/im-633165?width=1260&height=840&pixel_ratio=2",
-  "https://images.wsj.net/im-632559?width=1260&height=840&pixel_ratio=2",
-  "https://images.wsj.net/im-633144?width=1260&height=840&pixel_ratio=2"],
+  "https://chungboklee.github.io/glitch-classic/asset/1.png",
+  "https://chungboklee.github.io/glitch-classic/asset/2.png",
+  "https://chungboklee.github.io/glitch-classic/asset/3.png",
+  "https://chungboklee.github.io/glitch-classic/asset/4.png"],
 
   title: "THE DIMENSION\nnews website"},
 
 {
   images: [
-  "https://images.wsj.net/im-609750/?width=2000&size=1.5",
-  "https://assets.codepen.io/2479807/scroll-2.jpg",
-  "https://assets.codepen.io/2479807/scroll-3.jpg"],
+  "https://chungboklee.github.io/glitch-classic/asset/5.png",
+  "https://chungboklee.github.io/glitch-classic/asset/6.png",
+  "https://chungboklee.github.io/glitch-classic/asset/7.png"],
 
   title: "29\nSEP"},
 {
   images: [
-  "https://assets.codepen.io/2479807/img-5.jpg",
-  "https://assets.codepen.io/2479807/img-6.jpg",
-  "https://assets.codepen.io/2479807/img-7.jpg",
-  "https://assets.codepen.io/2479807/img-8.jpg"],
+  "https://chungboklee.github.io/glitch-classic/asset/8.png",
+  "https://chungboklee.github.io/glitch-classic/asset/9.png",
+  "https://chungboklee.github.io/glitch-classic/asset/10.png",
+  "https://chungboklee.github.io/glitch-classic/asset/11.png"],
 
   title: "28\nSEP"},
 
 {
   images: [
-  "https://assets.codepen.io/2479807/bike-1.jpg",
-  "https://assets.codepen.io/2479807/bike-2.jpg",
-  "https://assets.codepen.io/2479807/bike-3.jpg",
-  "https://assets.codepen.io/2479807/grid-photo-1.jpg"],
+  "https://chungboklee.github.io/glitch-classic/asset/12.png",
+  "https://chungboklee.github.io/glitch-classic/asset/13.png",
+  "https://chungboklee.github.io/glitch-classic/asset/14.png",
+  "https://chungboklee.github.io/glitch-classic/asset/15.png"],
 
   title: "27\nSEP"}];
 
