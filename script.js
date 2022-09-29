@@ -20,7 +20,7 @@ container.appendChild(renderer.domElement);
 
 const FOV = 88;
 const CAMERA_NEAR = 0.1;
-const CAMERA_FAR = 160;
+const CAMERA_FAR = 200;
 const ASPECT_RATIO = viewport.aspectRatio;
 
 const camera = new THREE.PerspectiveCamera(
@@ -30,7 +30,7 @@ CAMERA_NEAR,
 CAMERA_FAR);
 
 
-camera.position.set(0, 0, 50);
+camera.position.set(0, 0, 190);
 
 {
   const near = 1;

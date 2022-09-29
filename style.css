@@ -37,9 +37,20 @@ p {
   margin-bottom: 0.25rem;
 }
 
+.font-secondary{
+  font-size:0.75rem;
+  color: rgba(151,159,177,0.5);
+}
+
 a{
   color:rgba(151,159,177,0.8);
   text-decoration: none;
+}
+
+.icon{
+  width:2rem;
+  height:2rem;
+  margin-bottom:2rem;
 }
 
 canvas {
