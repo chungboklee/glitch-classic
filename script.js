@@ -42,7 +42,7 @@ camera.position.set(0, 0, 50);
 const sectionsInfo = [
 {
   images: [
-  "/asset/1.jpeg",
+  "https://chungboklee.github.io/glitch-classic/asset/1.jpeg",
   "https://images.wsj.net/im-633165?width=1260&height=840&pixel_ratio=2",
   "https://images.wsj.net/im-632559?width=1260&height=840&pixel_ratio=2",
   "https://images.wsj.net/im-633144?width=1260&height=840&pixel_ratio=2"],
