@@ -47,7 +47,7 @@ const sectionsInfo = [
   "https://chungboklee.github.io/glitch-classic/asset/3.png",
   "https://chungboklee.github.io/glitch-classic/asset/4.png"],
 
-  title: "THE DIMENSION\nnews website"},
+  title: "THE DIMENSION\nTODAY"},
 
 {
   images: [
@@ -96,16 +96,16 @@ const makePlane = (width, height, image) => {
 const setImagesPositions = (image, index) => {
   if (index === 0) {
     // Top left
-    gsap.set(image, { x: -10, y: 10, z: "-=20" });
+    gsap.set(image, { x: -8, y: 8, z: "-=20" });
   } else if (index === 1) {
     // Bottom left
-    gsap.set(image, { x: -10, y: -10, z: "-=80" });
+    gsap.set(image, { x: -8, y: -8, z: "-=80" });
   } else if (index === 2) {
     // Top right
-    gsap.set(image, { x: 10, y: 10, z: "-=40" });
+    gsap.set(image, { x: 8, y: 8, z: "-=40" });
   } else if (index === 3) {
     // Bottom rightv
-    gsap.set(image, { x: 10, y: -10, z: "-=120" });
+    gsap.set(image, { x: 8, y: -8, z: "-=120" });
   }
 
   return;
