@@ -18,7 +18,7 @@ renderer.setSize(viewport.width, viewport.height);
 renderer.setPixelRatio = window.devicePixelRatio;
 container.appendChild(renderer.domElement);
 
-const FOV = 120;
+const FOV = 88;
 const CAMERA_NEAR = 0.1;
 const CAMERA_FAR = 200;
 const ASPECT_RATIO = viewport.aspectRatio;
@@ -30,7 +30,7 @@ CAMERA_NEAR,
 CAMERA_FAR);
 
 
-camera.position.set(0, 0, 25);
+camera.position.set(0, 0, 190);
 
 {
   const near = 1;
@@ -42,13 +42,6 @@ camera.position.set(0, 0, 25);
 const sectionsInfo = [
 {
   images: [
-  "https://chungboklee.github.io/glitch-classic/asset/1.png",
-  "https://chungboklee.github.io/glitch-classic/asset/2.png",
-  "https://chungboklee.github.io/glitch-classic/asset/3.png",
-  "https://chungboklee.github.io/glitch-classic/asset/4.png",
-  "https://chungboklee.github.io/glitch-classic/asset/5.png",
-  "https://chungboklee.github.io/glitch-classic/asset/6.png",
-  "https://chungboklee.github.io/glitch-classic/asset/7.png",
   "https://chungboklee.github.io/glitch-classic/asset/1.png",
   "https://chungboklee.github.io/glitch-classic/asset/2.png",
   "https://chungboklee.github.io/glitch-classic/asset/3.png",
@@ -69,7 +62,7 @@ const sectionsInfo = [
   "https://chungboklee.github.io/glitch-classic/asset/10.png",
   "https://chungboklee.github.io/glitch-classic/asset/11.png"],
 
-  title: "29th\nSEP"},
+  title: "29\nSEP"},
 {
   images: [
   "https://chungboklee.github.io/glitch-classic/asset/8.png",
@@ -80,7 +73,7 @@ const sectionsInfo = [
   "https://chungboklee.github.io/glitch-classic/asset/13.png",
   "https://chungboklee.github.io/glitch-classic/asset/14.png"],
 
-  title: "28th\nSEP"},
+  title: "28\nSEP"},
 
 {
   images: [
@@ -92,7 +85,7 @@ const sectionsInfo = [
   "https://chungboklee.github.io/glitch-classic/asset/6.png",
   "https://chungboklee.github.io/glitch-classic/asset/7.png"],
 
-  title: "27th\nSEP"}];
+  title: "27\nSEP"}];
 
 
 
@@ -113,61 +106,32 @@ const makePlane = (width, height, image) => {
   return mesh;
 };
 
-// 이미지 나열 (메인 뉴스)
 const setImagesPositions = (image, index) => {
   if (index === 0) {
-//1좌부터 시계방향
+    // Top left
     gsap.set(image, { x: -8, y: 8, z: "-=20" });
   } else if (index === 1) {
-//1-1
-    gsap.set(image, { x: -28, y: 22, z: "-=22" });
+    // Bottom left
+    gsap.set(image, { x: -8, y: -8, z: "-=80" });
   } else if (index === 2) {
-//1-2
-    gsap.set(image, { x: -16, y: -16, z: "-=20" });
+    // Top right
+    gsap.set(image, { x: 8, y: 8, z: "-=40" });
   } else if (index === 3) {
-//1-3
+    // Bottom rightv
     gsap.set(image, { x: 8, y: -8, z: "-=20" });
   } else if (index === 4) {
-
-    gsap.set(image, { x: 28, y: -16, z: "-=22" });
+    // Bottom rightv
+    gsap.set(image, { x: -16, y: 16, z: "-=80" });
   } else if (index === 5) {
-
+    // Bottom rightv
     gsap.set(image, { x: -16, y: -16, z: "-=40" });
   } else if (index === 6) {
-
+    // Bottom rightv
     gsap.set(image, { x: 16, y: 16, z: "-=20" });
   } else if (index === 7) {
- 
+    // Bottom rightv
     gsap.set(image, { x: 16, y: -16, z: "-=80" });
-  } else if (index ===8) {
-
-  gsap.set(image, { x: -28, y: 3, z: "-=21" });
-} else if (index === 9) {
-
-  gsap.set(image, { x: -28, y: 22, z: "-=22" });
-} else if (index === 10) {
-
-  gsap.set(image, { x: 8, y: 8, z: "-=30" });
-} else if (index === 11) {
-
-  //1우-1
-  gsap.set(image, { x: 28, y: -16, z: "-=22" });
-} else if (index === 12) {
-
-  gsap.set(image, { x: -16, y: 16, z: "-=80" });
-} else if (index === 13) {
-
-  gsap.set(image, { x: -16, y: -16, z: "-=40" });
-} else if (index === 14) {
-
-  gsap.set(image, { x: 16, y: 16, z: "-=20" });
-} else if (index === 15) {
-
-  gsap.set(image, { x: 16, y: -16, z: "-=80" });
-} else if (index === 16) {
-
-gsap.set(image, { x: 16, y: -16, z: "-=80" });
-}
+  }
   return;
 };
 
