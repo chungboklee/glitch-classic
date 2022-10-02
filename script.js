@@ -18,7 +18,7 @@ renderer.setSize(viewport.width, viewport.height);
 renderer.setPixelRatio = window.devicePixelRatio;
 container.appendChild(renderer.domElement);
 
-const FOV = 120;
+const FOV = 100;
 const CAMERA_NEAR = 0.1;
 const CAMERA_FAR = 200;
 const ASPECT_RATIO = viewport.aspectRatio;
@@ -29,9 +29,10 @@ ASPECT_RATIO,
 CAMERA_NEAR,
 CAMERA_FAR);
 
-
+//카메라-시작 위치
 camera.position.set(0, 0, 25);
 
+//안개
 {
   const near = 1;
   const far = 300;
@@ -180,7 +181,7 @@ sectionsInfo.forEach((section, index) => {
   fontLoader.load(font, font => {
     const geometry = new THREE.TextBufferGeometry(section.title, {
       font: font,
-      size: 4,
+      size: 3,
       height: 0.2,
       curveSegments: 4 }).
     center();
@@ -215,7 +216,7 @@ sectionsInfo.forEach((section, index) => {
   });
 
   gsap.set(sectionGroup.position, {
-    z: () => -index * 200 });
+    z: () => -index * 100 });
 
   scene.add(sectionGroup);
 });
