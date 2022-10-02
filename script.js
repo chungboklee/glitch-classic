@@ -118,57 +118,56 @@ const makePlane = (width, height, image) => {
 // 이미지 나열 (메인 뉴스)
 const setImagesPositions = (image, index) => {
   if (index === 0) {
-//1좌부터 시계방향
-    gsap.set(image, { x: -8, y: 8, z: "-=20" });
+//1
+    gsap.set(image, { x: -12, y: 12, z: "-=20" });
   } else if (index === 1) {
-//1-1
-    gsap.set(image, { x: -28, y: 22, z: "-=22" });
+//2
+    gsap.set(image, { x: 10, y: 8, z: "-=24" });
   } else if (index === 2) {
-//1-2
-    gsap.set(image, { x: -16, y: -16, z: "-=20" });
+//3
+    gsap.set(image, { x: 12, y: -10, z: "-=20" });
   } else if (index === 3) {
-//1-3
-    gsap.set(image, { x: 8, y: -8, z: "-=20" });
+//4
+    gsap.set(image, { x: -12, y: -8, z: "-=20" });
   } else if (index === 4) {
-
-    gsap.set(image, { x: 28, y: -16, z: "-=22" });
+//1-a
+    gsap.set(image, { x: -30, y: 24, z: "-=24" });
   } else if (index === 5) {
-
-    gsap.set(image, { x: -16, y: -16, z: "-=40" });
+//1-b
+    gsap.set(image, { x: -34, y: 8, z: "-=24" });
   } else if (index === 6) {
-
-    gsap.set(image, { x: 16, y: 16, z: "-=20" });
+//3-a
+    gsap.set(image, { x: 32, y: -18, z: "-=24" });
   } else if (index === 7) {
- 
-    gsap.set(image, { x: 16, y: -16, z: "-=80" });
+ //4-a
+    gsap.set(image, { x: -30, y: -16, z: "-=24" });
   } else if (index ===8) {
-
-  gsap.set(image, { x: -28, y: 3, z: "-=21" });
+//21
+  gsap.set(image, { x: -12, y: 4, z: "-=40" });
 } else if (index === 9) {
-
-  gsap.set(image, { x: -28, y: 22, z: "-=22" });
+//22
+  gsap.set(image, { x: 12, y: -12, z: "-=40" });
 } else if (index === 10) {
-
-  gsap.set(image, { x: 8, y: 8, z: "-=30" });
+//23
+  gsap.set(image, { x: 10, y: 8, z: "-=40" });
 } else if (index === 11) {
-
-  //1우-1
-  gsap.set(image, { x: 28, y: -16, z: "-=22" });
+//32-a
+  gsap.set(image, { x: -16, y: 16, z: "-=64" });
 } else if (index === 12) {
-
-  gsap.set(image, { x: -16, y: 16, z: "-=80" });
+//32
+  gsap.set(image, { x: 0, y: 8, z: "-=60" });
 } else if (index === 13) {
-
-  gsap.set(image, { x: -16, y: -16, z: "-=40" });
+//33
+  gsap.set(image, { x: 12, y: -10, z: "-=60" });
 } else if (index === 14) {
-
-  gsap.set(image, { x: 16, y: 16, z: "-=20" });
+//34
+  gsap.set(image, { x: -12, y: -8, z: "-=60" });
 } else if (index === 15) {
-
-  gsap.set(image, { x: 16, y: -16, z: "-=80" });
+//32-b
+  gsap.set(image, { x: 20, y: 16, z: "-=64" });
 } else if (index === 16) {
 
-gsap.set(image, { x: 16, y: -16, z: "-=80" });
+gsap.set(image, { x: 16, y: -16, z: "-=60" });
 }
   return;
 };
