@@ -64,24 +64,42 @@ const sectionsInfo = [
 
 {
   images: [
+    "https://chungboklee.github.io/glitch-classic/asset/1.png",
+    "https://chungboklee.github.io/glitch-classic/asset/2.png",
+    "https://chungboklee.github.io/glitch-classic/asset/3.png",
+    "https://chungboklee.github.io/glitch-classic/asset/4.png",
+    "https://chungboklee.github.io/glitch-classic/asset/5.png",
+    "https://chungboklee.github.io/glitch-classic/asset/6.png",
+    "https://chungboklee.github.io/glitch-classic/asset/7.png",
+    "https://chungboklee.github.io/glitch-classic/asset/8.png",
+    "https://chungboklee.github.io/glitch-classic/asset/9.png",
+    "https://chungboklee.github.io/glitch-classic/asset/10.png",
+    "https://chungboklee.github.io/glitch-classic/asset/11.png",
+    "https://chungboklee.github.io/glitch-classic/asset/12.png",
+    "https://chungboklee.github.io/glitch-classic/asset/13.png",
+    "https://chungboklee.github.io/glitch-classic/asset/14.png",
+    "https://chungboklee.github.io/glitch-classic/asset/15.png",
+    "https://chungboklee.github.io/glitch-classic/asset/16.png"],
+
+  title: "29th\nSEP"},
+{
+  images: [
+    "https://chungboklee.github.io/glitch-classic/asset/1.png",
+  "https://chungboklee.github.io/glitch-classic/asset/2.png",
+  "https://chungboklee.github.io/glitch-classic/asset/3.png",
+  "https://chungboklee.github.io/glitch-classic/asset/4.png",
   "https://chungboklee.github.io/glitch-classic/asset/5.png",
   "https://chungboklee.github.io/glitch-classic/asset/6.png",
   "https://chungboklee.github.io/glitch-classic/asset/7.png",
   "https://chungboklee.github.io/glitch-classic/asset/8.png",
   "https://chungboklee.github.io/glitch-classic/asset/9.png",
   "https://chungboklee.github.io/glitch-classic/asset/10.png",
-  "https://chungboklee.github.io/glitch-classic/asset/11.png"],
-
-  title: "29th\nSEP"},
-{
-  images: [
-  "https://chungboklee.github.io/glitch-classic/asset/8.png",
-  "https://chungboklee.github.io/glitch-classic/asset/9.png",
-  "https://chungboklee.github.io/glitch-classic/asset/10.png",
   "https://chungboklee.github.io/glitch-classic/asset/11.png",
   "https://chungboklee.github.io/glitch-classic/asset/12.png",
   "https://chungboklee.github.io/glitch-classic/asset/13.png",
-  "https://chungboklee.github.io/glitch-classic/asset/14.png"],
+  "https://chungboklee.github.io/glitch-classic/asset/14.png",
+  "https://chungboklee.github.io/glitch-classic/asset/15.png",
+  "https://chungboklee.github.io/glitch-classic/asset/16.png"],
 
   title: "28th\nSEP"},
 
@@ -129,7 +147,7 @@ const setImagesPositions = (image, index) => {
     gsap.set(image, { x: 12, y: -10, z: "-=20" });
   } else if (index === 3) {
 //4
-    gsap.set(image, { x: -12, y: -8, z: "-=20" });
+    gsap.set(image, { x: -12, y: -12, z: "-=20" });
   } else if (index === 4) {
 //1-a
     gsap.set(image, { x: -28, y: 20, z: "-=18" });
@@ -138,10 +156,10 @@ const setImagesPositions = (image, index) => {
     gsap.set(image, { x: -30, y: 4, z: "-=18" });
   } else if (index === 6) {
 //3-a
-    gsap.set(image, { x: 32, y: -18, z: "-=24" });
+    gsap.set(image, { x: 34, y: -18, z: "-=24" });
   } else if (index === 7) {
  //4-a
-    gsap.set(image, { x: -30, y: -16, z: "-=24" });
+    gsap.set(image, { x: -30, y: -24, z: "-=24" });
   } else if (index ===8) {
 //21
   gsap.set(image, { x: -12, y: 4, z: "-=40" });
