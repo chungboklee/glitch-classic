@@ -19,7 +19,7 @@ renderer.setPixelRatio = window.devicePixelRatio;
 container.appendChild(renderer.domElement);
 
 const FOV = 100;
-const CAMERA_NEAR = 0.1;
+const CAMERA_NEAR = 0.5;
 const CAMERA_FAR = 200;
 const ASPECT_RATIO = viewport.aspectRatio;
 
@@ -132,10 +132,10 @@ const setImagesPositions = (image, index) => {
     gsap.set(image, { x: -12, y: -8, z: "-=20" });
   } else if (index === 4) {
 //1-a
-    gsap.set(image, { x: -30, y: 24, z: "-=24" });
+    gsap.set(image, { x: -28, y: 20, z: "-=18" });
   } else if (index === 5) {
 //1-b
-    gsap.set(image, { x: -34, y: 8, z: "-=24" });
+    gsap.set(image, { x: -30, y: 4, z: "-=18" });
   } else if (index === 6) {
 //3-a
     gsap.set(image, { x: 32, y: -18, z: "-=24" });
